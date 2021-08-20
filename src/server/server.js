@@ -16,6 +16,13 @@ let poems = [
   }
 ];
 
+app.use(function(req, res, next) {
+  if (!req.headers.bob) {
+    return res.status(401).json({ error: 'Unauthorised response' });
+  }
+  next();
+});
+
 // @desc default page
 // @route GET /
 app.get("/", (req, res) => {
