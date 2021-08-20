@@ -46,6 +46,9 @@ app.get("/api/poems/:id", (req, res) => {
 app.post("/api/poems", (req, res) => {
     const id = poems.length;
     var postBody = req.body;
+    if (!(postBody.title || postBody.author || postBody.authorid || postBody.text)) {
+      return res.status(400).json({ error: "parameter(s) missing"})
+    }
     var poem = {
         id: id,
         title: postBody.title,
@@ -56,6 +59,18 @@ app.post("/api/poems", (req, res) => {
     }
     poems = poems.concat(poem)
     res.json(poem)
+})
+
+// @desc upvote for poem given id
+// @route POST /api/poems/:id
+app.post("/api/poems/:id", function (req, res) {
+    const id = parseInt(req.params.id);
+    const poem = poems.find(poem => poem.id == id);
+    if (!poem) {
+      return res.status(400).json({ error: "id doesn't exist"})
+    }
+    poem.votes = poem.votes + 1;
+    res.json(poem);
 })
 
 const PORT = 3001;
