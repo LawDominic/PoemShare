@@ -20,7 +20,9 @@ let poems = [
 ];
 
 app.use(function(req, res, next) {
+  console.log(req)
   if (!req.headers.bob) {
+    console.log(req)
     return res.status(401).json({ error: 'Unauthorised response' });
   }
   next();
@@ -78,7 +80,8 @@ app.post("/api/poems", (req, res) => {
 
 // @desc upvote for poem given id
 // @route POST /api/poems/:id
-app.post("/api/poems/:id", function (req, res) {
+app.post('/api/poems/:id', (req, res) => {
+    console.log(req);
     const id = parseInt(req.params.id);
     const poem = poems.find(poem => poem.id == id);
     if (!poem) {
