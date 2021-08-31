@@ -16,10 +16,15 @@ const create = (newPoem) => {
 }
 
 const del = (delPoem) => {
-    return axios.delete(baseURL, delPoem)
+    return axios.delete(baseURL, delPoem, {headers})
         .then(res => res.data)
 }
 
-const exports = {getAll, create, del}
+const upvote = (upvotePoem) => {
+    return axios.post(baseURL + `/${upvotePoem}`, {}, {headers})
+        .then(res => console.log(res))
+}
+
+const exports = {getAll, create, del, upvote}
 
 export default exports
