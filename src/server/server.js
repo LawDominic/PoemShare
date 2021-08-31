@@ -1,7 +1,10 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
-
+const cors = require('cors')
+cors({credentials: true, origin: true})
+app.use(cors())
+app.use(express.static("build"))
 let poems = [
   {
     id: 0,
@@ -32,7 +35,6 @@ app.get("/", (req, res) => {
 // @desc fetch poems data
 // @route GET /api/poems
 app.get("/api/poems", (req, res) => {
-  console.log(poems);
   res.json(poems);
 });
 
@@ -48,19 +50,25 @@ app.get("/api/poems/:id", (req, res) => {
     }
 });
 
+const generateId = () => {
+  const maxId = poems.length > 0 
+  ? Math.max(...poems.map(poem => poem.id))
+  : 0
+  return maxId + 1
+}
+
 // @desc post poem
 // @route POST /api/poems
 app.post("/api/poems", (req, res) => {
-    const id = poems.length;
+    const id = generateId()
     var postBody = req.body;
-    if (!(postBody.title || postBody.author || postBody.authorid || postBody.text)) {
+    if (!(postBody.title || postBody.author || postBody.text)) {
       return res.status(400).json({ error: "parameter(s) missing"})
     }
     var poem = {
         id: id,
         title: postBody.title,
         author: postBody.author,
-        authorid: postBody.authorid,
         text: postBody.text,
         votes: 0
     }
