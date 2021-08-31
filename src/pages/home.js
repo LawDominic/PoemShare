@@ -1,13 +1,16 @@
 import React from 'react';
 import Poem from '../poem.js';
 
+const listStyle = {
+    listStyleType: 'none',
+    paddingBottom: '20px'
+}
+
 const Home = ({poems}) => {
-    poems.map((poem) => {
-        console.log(poem.id);
-    })
+
     return (        
       <ul>
-        {poems.map((poem) => (<li key={poem} style={{listStyleType: 'none'}}><Poem poem={poem}/></li>))}
+        {poems.map((poem) => (<li key={poem} style={listStyle}><Poem poem={poem}/></li>))}
       </ul>
     )
   }
