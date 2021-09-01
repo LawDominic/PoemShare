@@ -10,7 +10,6 @@ const getAll = () => {
 }
 
 const create = (newPoem) => {
-    console.log(newPoem);
     return axios.post(baseURL, newPoem, {headers})
         .then(res => res.data)
 }
@@ -22,9 +21,14 @@ const del = (delPoem) => {
 
 const upvote = (upvotePoem) => {
     return axios.post(baseURL + `/${upvotePoem}`, {}, {headers})
-        .then(res => console.log(res))
+        .then(res => res.data)
 }
 
-const exports = {getAll, create, del, upvote}
+const getVotes = (poemID) => {
+    return axios.post(baseURL + `/${poemID}`, {}, {headers})
+        .then(res => res.data)
+}
+
+const exports = {getAll, create, del, upvote, getVotes}
 
 export default exports
