@@ -20,9 +20,7 @@ let poems = [
 ];
 
 app.use(function(req, res, next) {
-  console.log(req)
   if (!req.headers.bob) {
-    console.log(req)
     return res.status(401).json({ error: 'Unauthorised response' });
   }
   next();
@@ -63,15 +61,15 @@ const generateId = () => {
 // @route POST /api/poems
 app.post("/api/poems", (req, res) => {
     const id = generateId()
-    var postBody = req.body;
-    if (!(postBody.title || postBody.author || postBody.text)) {
+    var body = req.body;
+    if (!(body.title || body.author || body.text)) {
       return res.status(400).json({ error: "parameter(s) missing"})
     }
     var poem = {
         id: id,
-        title: postBody.title,
-        author: postBody.author,
-        text: postBody.text,
+        title: body.title,
+        author: body.author,
+        text: body.text,
         votes: 0
     }
     poems = poems.concat(poem)
@@ -81,7 +79,6 @@ app.post("/api/poems", (req, res) => {
 // @desc upvote for poem given id
 // @route POST /api/poems/:id
 app.post('/api/poems/:id', (req, res) => {
-    console.log(req);
     const id = parseInt(req.params.id);
     const poem = poems.find(poem => poem.id == id);
     if (!poem) {
