@@ -7,7 +7,6 @@ const listStyle = {
 }
 
 const Home = ({poems}) => {
-
     return (
         <ul>
           {poems.map((poem) => (<li key={poem.id} style={listStyle}><Poem poem={poem}/></li>))}

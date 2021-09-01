@@ -42,7 +42,6 @@ const AddPoem = ({addPoem, poems}) => {
   const formHandler = (event) => {
     event.preventDefault()
     if (newPoemTitle.length === 0 || newPoemAuthor.length === 0 || newPoemText.length === 0) {
-      console.log("shit");
       setShowFailedAlert(true)
     } else {
       const poemObject = {
@@ -92,7 +91,6 @@ const AddPoem = ({addPoem, poems}) => {
               <textarea className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none" type="text" id="content" value={newPoemText} onChange={handleNewPoemText}/>
             </div>
           </div>
-
           <input type="submit" className="rounded-lg px-4 py-2 bg-blue-400 text-blue-100 hover:bg-blue-300"/>
         </form>
       </div>
