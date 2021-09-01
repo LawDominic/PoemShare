@@ -16,6 +16,17 @@ let poems = [
   sed do eiusmod tempor incididunt ut 
   labore et dolore magna aliqua.  `,
     votes: 3,
+  },
+  {
+    id: 1,
+    title: "Campervan 1",
+    author: "Bob Bobalooba 1",
+    authorid: 0,
+    text: `__Lorem__ ipsum dolor sit amet,  
+  consectetur adipiscing elit,  
+  sed do eiusmod tempor incididunt ut 
+  labore et dolore magna aliqua.  `,
+    votes: 1,
   }
 ];
 
