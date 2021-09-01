@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="./public/images/icon.png" alt="PoemShare" width="200">
+  <img src="./public/images/logo.png" alt="PoemShare" width="200">
   <br>
   PoemShare
   <br>
@@ -42,3 +42,4 @@ This project uses the following packages:
 - [Express](https://expressjs.com/)
 - [cors](https://www.npmjs.com/package/cors)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [SmashIcons](https://www.flaticon.com/authors/smashicons)
