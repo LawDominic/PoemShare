@@ -19,7 +19,6 @@ function App() {
   const addPoem = (newPoem) => {
     poemServices.create(newPoem)
       .then(object => {
-        console.log("POST response", object)
         setPoems(poems.concat(object))
       })
   }

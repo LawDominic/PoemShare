@@ -1,4 +1,4 @@
-import React, { useState, setState } from 'react';
+import React, { useState } from 'react';
 import {Link} from 'react-router-dom'
 
 const AddPoem = ({addPoem, poems}) => {
@@ -20,13 +20,12 @@ const AddPoem = ({addPoem, poems}) => {
   }
 
   const SuccessAlert = () => {
-    const poem = poems.length-1
-    const id = poems[poem.id]
+    const id = poems.length-1
     return (
       showSuccessAlert ? (
         <div className={"text-white px-6 py-4 border-0 rounded relative mb-4 bg-green-400"}>
           <p className="inline-block align-middle mr-3">
-            <b>Success</b> - head back to the <Link to={'/'}>home page</Link> to view your poem or <Link to={`/poems/${poem.id}`}>directly here</Link>!
+            <b>Success</b> - head back to the <Link to={'/'} className="font-base font-semibold">home page</Link> to view your poem or <Link to={`/poems/${id}`}>directly here</Link>!
           </p>
           <button className="bg-transparent right-0 top-0 mt-4 mr-6 text-2xl font-bold leading-none absolute focus:outline-none" onClick={() => setShowSuccessAlert(false)}>
             <p>×</p>
@@ -42,7 +41,7 @@ const AddPoem = ({addPoem, poems}) => {
 
   const formHandler = (event) => {
     event.preventDefault()
-    if (newPoemTitle.length == 0 || newPoemAuthor.length == 0 || newPoemText.length == 0) {
+    if (newPoemTitle.length === 0 || newPoemAuthor.length === 0 || newPoemText.length === 0) {
       console.log("shit");
       setShowFailedAlert(true)
     } else {
