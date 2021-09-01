@@ -1,6 +1,17 @@
-# PoemShare
+<h1 align="center">
+  <br>
+  <img src="./public/images/icon.png" alt="PoemShare" width="200">
+  <br>
+  PoemShare
+  <br>
+</h1>
 
-PoemShare is a simple web application allowing users to submit their poems and upvote poems based on their preference.
+<h4 align="center">PoemShare is a simple web application allowing users to submit their poems and upvote poems based on their preference.</h4>
+
+<p align="center">
+  <a href="#getting-started">Getting started</a> •
+  <a href="#credits">Creditss</a> •
+</p>
 
 ## Getting started
 
