@@ -3,12 +3,12 @@ import {useParams} from 'react-router-dom'
 
 const Poem = ({poems}) => {
     const id = Number(useParams().id)
-    const poem = poems.find(p => p.id === id) 
+    const poem = poems.find(p => p.id === id)
 
     return (
-        <div>
-            <h1>{poem.title}</h1><br/>
-            <h3>{poem.author}</h3><br/>
+        <div className="space-y-4 text-gray-900 w-2/3 mx-auto">
+            <p class="text-2xl font-semibold ">{poem.title}</p>
+            <p>by <i>{poem.author}</i></p><br/>
             <p>{poem.text}</p><br/>
         </div>
     )
