@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="#getting-started">Getting started</a> •
-  <a href="#credits">Creditss</a> •
+  <a href="#credits">Credits</a>
 </p>
 
 ## Getting started
