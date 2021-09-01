@@ -78,7 +78,7 @@ function App() {
 
         <Switch>
           <Route path="/poems/:id"><Poems poems={poems}/></Route>
-          <Route path="/addpoem"><AddPoem addPoem={addPoem}/></Route>
+          <Route path="/addpoem"><AddPoem addPoem={addPoem} poems={poems}/></Route>
           <Route path="/"><Home poems={poems} /></Route>
         </Switch>
       </Router>

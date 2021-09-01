@@ -1,6 +1,7 @@
 import React, { useState, setState } from 'react';
+import {Link} from 'react-router-dom'
 
-const AddPoem = ({addPoem}) => {
+const AddPoem = ({addPoem, poems}) => {
   const [showFailedAlert, setShowFailedAlert] = useState(false);
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const FailedAlert = () => {
@@ -19,11 +20,13 @@ const AddPoem = ({addPoem}) => {
   }
 
   const SuccessAlert = () => {
+    const poem = poems.length-1
+    const id = poems[poem.id]
     return (
       showSuccessAlert ? (
         <div className={"text-white px-6 py-4 border-0 rounded relative mb-4 bg-green-400"}>
           <p className="inline-block align-middle mr-3">
-            <b>Success</b> - head back to the home page to view your poem!
+            <b>Success</b> - head back to the <Link to={'/'}>home page</Link> to view your poem or <Link to={`/poems/${poem.id}`}>directly here</Link>!
           </p>
           <button className="bg-transparent right-0 top-0 mt-4 mr-6 text-2xl font-bold leading-none absolute focus:outline-none" onClick={() => setShowSuccessAlert(false)}>
             <p>×</p>
