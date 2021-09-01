@@ -25,7 +25,7 @@ const AddPoem = ({addPoem, poems}) => {
       showSuccessAlert ? (
         <div className={"text-white px-6 py-4 border-0 rounded relative mb-4 bg-green-400"}>
           <p className="inline-block align-middle mr-3">
-            <b>Success</b> - head back to the <Link to={'/'} className="font-base font-semibold">home page</Link> to view your poem or <Link to={`/poems/${id}`}>directly here</Link>!
+            <b>Success</b> - head back to the <Link to={'/'} className="font-base font-semibold">home page</Link> to view your poem or <Link to={`/poems/${id}`} className="font-base font-semibold">directly here</Link>!
           </p>
           <button className="bg-transparent right-0 top-0 mt-4 mr-6 text-2xl font-bold leading-none absolute focus:outline-none" onClick={() => setShowSuccessAlert(false)}>
             <p>×</p>
