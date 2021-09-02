@@ -10,9 +10,9 @@ let poems = [
     title: "Campervan",
     author: "Bob Bobalooba",
     authorid: 0,
-    text: `__Lorem__ ipsum dolor sit amet,  
-  consectetur adipiscing elit,  
-  sed do eiusmod tempor incididunt ut 
+    text: `# __Lorem__ ipsum dolor sit amet, \n\n  
+  consectetur adipiscing elit,  \n\n  
+  sed do eiusmod tempor incididunt ut \n\n  
   labore et dolore magna aliqua.  `,
     votes: 3,
   },
@@ -21,9 +21,9 @@ let poems = [
     title: "Campervan 1",
     author: "Bob Bobalooba 1",
     authorid: 0,
-    text: `__Lorem__ ipsum dolor sit amet,  
-  consectetur adipiscing elit,  
-  sed do eiusmod tempor incididunt ut 
+    text: `# __Lorem__ ipsum dolor sit amet, \n\n  
+  consectetur adipiscing elit,  \n\n  
+  sed do eiusmod tempor incididunt ut \n\n  
   labore et dolore magna aliqua.  `,
     votes: 1,
   }
