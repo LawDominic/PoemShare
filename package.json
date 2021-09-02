@@ -16,8 +16,10 @@
     "react-markdown": "^7.0.1",
     "react-router-dom": "^5.2.1",
     "react-scripts": "4.0.3",
-    "tailwindcss": "^2.2.9",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.36",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.9"
   },
   "scripts": {
     "start": "craco start",
@@ -48,6 +50,7 @@
   "devDependencies": {
     "autoprefixer": "^9.8.6",
     "nodemon": "^2.0.12",
-    "postcss": "^7.0.36"
+    "postcss": "^7.0.36",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.9"
   }
 }
