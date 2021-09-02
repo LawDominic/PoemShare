@@ -8,7 +8,7 @@ const Poem = ({poems}) => {
 
     return (
         <div className="space-y-4 text-gray-900 w-2/3 mx-auto">
-            <p className="text-2xl font-semibold ">{poem.title}</p>
+            <p className="text-2xl font-semibold">{poem.title}</p>
             <p>by <i>{poem.author}</i></p><br/>
             <ReactMarkdown children={poem.text}/>
         </div>
