@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom'
+import ReactMarkdown from 'react-markdown'
+import style from './markdownCSS.module.css';
 
 const AddPoem = ({addPoem, poems}) => {
   const [showFailedAlert, setShowFailedAlert] = useState(false);
@@ -78,7 +80,7 @@ const AddPoem = ({addPoem, poems}) => {
           <div className="flex flex-wrap -mx-2 space-y-4 md:space-y-0">
             <div className="w-full px-2 md:w-1/2">
               <label className="block mb-1" htmlFor="title">Title</label>
-              <input className="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:outline-none" type="text" id="title" value={newPoemTitle} onChange={handleNewPoemTitle}/>
+              <input autofocus className="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:outline-none" type="text" id="title" value={newPoemTitle} onChange={handleNewPoemTitle}/>
             </div>
             <div className="w-full px-2 md:w-1/2">
               <label className="block mb-1" htmlFor="author">Author</label>
@@ -88,8 +90,13 @@ const AddPoem = ({addPoem, poems}) => {
           <div className="flex flex-wrap">
             <div className="w-full">
               <label className="block mb-1" htmlFor="content">Content</label>
-              <textarea className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none" type="text" id="content" value={newPoemText} onChange={handleNewPoemText}/>
+              <textarea className="w-full px-3 py-2 border rounded-lg focus:outline-none" type="text" id="content" value={newPoemText} onChange={handleNewPoemText}/>
               <p className="text-xs italic text-right">Please use <a href="https://www.markdownguide.org/basic-syntax/" className="underline">markdown syntax</a> if you require styling.</p>
+            </div>
+
+            <div className="w-full mt-5">
+            <p>Preview</p>
+            <ReactMarkdown children={newPoemText} className={`${style.reactMarkDown} w-full px-3 py-2 border rounded-lg focus:outline-none bg-white`}/>
             </div>
           </div>
           <input type="submit" className="rounded-lg px-4 py-2 bg-blue-400 text-blue-100 hover:bg-blue-300"/>
