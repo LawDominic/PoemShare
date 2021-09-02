@@ -42,4 +42,5 @@ This project uses the following packages:
 - [Express](https://expressjs.com/)
 - [cors](https://www.npmjs.com/package/cors)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [react-markdown](https://github.com/remarkjs/react-markdown)
 - [SmashIcons](https://www.flaticon.com/authors/smashicons)
