@@ -89,6 +89,7 @@ const AddPoem = ({addPoem, poems}) => {
             <div className="w-full">
               <label className="block mb-1" htmlFor="content">Content</label>
               <textarea className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none" type="text" id="content" value={newPoemText} onChange={handleNewPoemText}/>
+              <p className="text-xs italic text-right">Please use <a href="https://www.markdownguide.org/basic-syntax/" className="underline">markdown syntax</a> if you require styling.</p>
             </div>
           </div>
           <input type="submit" className="rounded-lg px-4 py-2 bg-blue-400 text-blue-100 hover:bg-blue-300"/>
