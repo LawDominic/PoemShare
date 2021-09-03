@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {Link} from 'react-router-dom'
 import poemServices from './services/poems.js';
 import { ChevronDoubleUpIcon } from '@heroicons/react/solid'
+import ReactMarkdown from 'react-markdown'
 
 const Poem = ({poem}) => {
     const id = poem.id
@@ -14,6 +15,10 @@ const Poem = ({poem}) => {
         })
     }
 
+    const str = poem.text
+    const splitted = str.split(/\n\n/)
+    const text =  splitted[0] + splitted[1]
+
     return (
         <div className="mx-auto bg-gray-100 shadow-md rounded border-grey w-1/2">
             <div className="p-4 flex flex-wrap">
@@ -22,7 +27,11 @@ const Poem = ({poem}) => {
                 </div>
                 <div className="float-right flex items-center justify-center px-4">
                     <Link to={`/poems/${poem.id}`}>
-                        <b>{poem.title}</b> by <i>{poem.author}</i>
+                        <div className="text-center items-center">
+                           <b>{poem.title}</b> by <i>{poem.author}</i>
+                            <ReactMarkdown children={text} className="text-sm mt-2"/> 
+                        </div>
+                        
                     </Link>
                 </div>
             </div>
