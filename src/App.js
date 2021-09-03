@@ -69,7 +69,7 @@ function App() {
       </Router>
       <footer className="absolute inset-x-0 bottom-0 h-14 bg-gray-100">
         Copyright © 2021 All Rights Reserved by <a className="font-medium" href="https://github.com/LawDominic">Dominic Law</a>
-          <p class="text-base md:text-sm"> Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+          <p className="text-base md:text-sm"> Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
       </footer>
     </div>
   );
